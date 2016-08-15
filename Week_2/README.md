@@ -111,7 +111,7 @@ Our hypothesis function need not be linear (a straight line) if that does not fi
 
   * Note that at 2:52 and through 6:22 in the "Features and Polynomial Regression" video, the curve that Prof Ng discusses about "doesn't ever come back down" is in reference to the hypothesis function that uses the `sqrt()` function (shown by the solid purple line), not the one that uses $size^2$ (shown with the dotted blue line). The quadratic form of the hypothesis function would have the shape shown with the blue dotted line if $\theta _2$ was negative.
 
-    ![polynomial_regression](/images/polynomial_regression.png)
+    ![polynomial_regression](images/polynomial_regression.png)
 * One important thing to keep in mind is, if you choose your features this way then **feature scaling becomes very important**.
   * E.g. if $x_1$ has range $1 - 1000$ then range of $x^2_1$ becomes $1 - 1000000$ and that of $x^3_1$ becomes $1 - 1000000000$
   * So you should scale $x_1$ before using polynomial regression.
