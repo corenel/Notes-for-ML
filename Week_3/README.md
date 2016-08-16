@@ -26,7 +26,7 @@ $h_\theta (x) = \frac{1}{1+e^{-\theta ^T x}}​$
 
     * Called "Sigmod function" or "Logistic function"
 
-      ![sigmod function](images/sigmod_function.png)
+      ![sigmod function](../images/sigmod_function.png)
 
 #### Interpretation of Hypothesis Output
 
@@ -55,7 +55,7 @@ In conclusion, we can now say:
 
 The **decision boundary** is the line that separates the area where $y=0$ and where $y=1$. It is created by our hypothesis function $\theta^T x = 0$.
 
-![Disicion Boundary](images/dicision_boundary.png)
+![Disicion Boundary](../images/dicision_boundary.png)
 
 The decision boundary is a property, not of the trading set, but of the hypothesis $h_\theta(x)$ under the parameters. As long as we're given parameter vector $\theta$, that defines the decision boundary. <u>But the training set is not what we use to define the decision boundary.</u>
 
@@ -63,14 +63,14 @@ The decision boundary is a property, not of the trading set, but of the hypothes
 
 The input to the sigmoid function $g(z)$ (e.g. $\theta ^T x$) doesn't need to be linear, and could be a function that describes a circle (e.g. $z = \theta_0 + \theta _1 x_1 + \theta _2 x_2 + \theta _3 x_1^2 + \theta _4 x_2^2$) or any shape to fit our data.
 
-![nonlinear decision boundary](images/nonlinear_decision_boundary.png)
+![nonlinear decision boundary](../images/nonlinear_decision_boundary.png)
 
 ## Logistic Regression Model
 ### Cost Function
 
 We cannot use the same cost function that we use for linear regression because the Logistic Function will cause the output to be wavy, causing many local optima. In other words, it will not be a convex function (凸函数).
 
-![non-convex and convex function](images/non-convex_and_convex_function.png)
+![non-convex and convex function](../images/non-convex_and_convex_function.png)
 
 Instead, our cost function for logistic regression looks like:
 
@@ -82,9 +82,9 @@ $\mathrm{Cost}(h_\theta(x),y) = \begin{cases}-\log(h_\theta(x)) ,&\text{if y = 1
 * But as $h_\theta (x) \to 0, \mathrm{Cost} \to \infty$
   * Captures intuition that if $h_\theta (x) = 0$ (predict $P(y=1|x;\theta ) = 0$), but $y=1$, we'll **penalise** learning algorithm by a very large cost.
 
-![Logistic_regression_cost_function_positive_class](images/Logistic_regression_cost_function_positive_class.png)
+![Logistic_regression_cost_function_positive_class](../images/Logistic_regression_cost_function_positive_class.png)
 
-![Logistic_regression_cost_function_negative_class](images/Logistic_regression_cost_function_negative_class.png)
+![Logistic_regression_cost_function_negative_class](../images/Logistic_regression_cost_function_negative_class.png)
 
 ### Simplified Cost Function and Gradient Descent
 
@@ -171,7 +171,7 @@ $h_\theta^{(i)}(x) = P(y = i | x ; \theta)\ \ \ \  (i=1,2,3,\dots , n+1)$
 
 On a new input $x$, to make a prediction, pick the class $i$ that maximizes $h_\theta ^{(i)} (x)$.
 
-![One-vs-all](images/one_vs_all.png)
+![One-vs-all](../images/one_vs_all.png)
 
 # Regularization
 
@@ -179,14 +179,14 @@ On a new input $x$, to make a prediction, pick the class $i$ that maximizes $h_\
 
 ### The Problem of Overfitting
 
-![overfitting](images/overfitting.png)
+![overfitting](../images/overfitting.png)
 
 * **High bias** or **underfitting** is when the form of our hypothesis function h maps poorly to the trend of the data. It is usually caused by a function that is too simple or uses too few features. eg. if we take $h_\theta (x)=\theta _0+\theta _1x_1+\theta _2x_2$ then we are making an initial assumption that a linear model will fit the training data well and will be able to generalize but that may not be the case.
 * At the other extreme, **overfitting** or **high variance** is caused by a hypothesis function that fits the available data but does not generalize (泛化) well to predict new data. It is usually caused by a complicated function that creates a lot of unnecessary curves and angles unrelated to the data.
 
 This terminology is applied to both linear and logistic regression.
 
-![overfitting_2](images/overfitting_2.png)
+![overfitting_2](../images/overfitting_2.png)
 
 There are **two** main options to address the issue of overfitting:
 
@@ -214,7 +214,7 @@ $min_\theta\ \dfrac{1}{2m}\sum_{i=1}^m (h_\theta(x^{(i)}) - y^{(i)})^2 + 1000\cd
 
 We've added two extra terms at the end to inflate the cost of $\theta_3$ and $\theta_4$. Now, in order for the cost function to get close to zero, we will have to reduce the values of $\theta_3$ and $\theta_4$ to near zero. This will in turn greatly reduce the values of $\theta _3x_3$ and $\theta _4x_4$ in our hypothesis function.
 
-![regularization_intuition](images/regularization_intuition.png)
+![regularization_intuition](../images/regularization_intuition.png)
 
 #### Regularization
 
